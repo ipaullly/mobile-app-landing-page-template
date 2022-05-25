@@ -2,6 +2,7 @@
 
 /* Navigation */
 // Collapse the navbar by adding the top-nav-collapse class
+
 window.onscroll = function () {
 	scrollFunction();
 	scrollFunctionBTT(); // back to top button
@@ -9,7 +10,14 @@ window.onscroll = function () {
 
 window.onload = function () {
 	scrollFunction();
-};
+	if ($('.count').length) {
+		$('.count').counterUp({
+			delay: 5,
+			time: 3000
+		});
+	}
+}
+
 
 function scrollFunction() {
 	/// depending on the browser the scrollTop value can either be derived from document.documentElement
@@ -89,6 +97,7 @@ if (checkReplace !== null) {
 		onComplete: false // Function
 	});
 }
+
 
 
 /* Card Slider - Swiper */
